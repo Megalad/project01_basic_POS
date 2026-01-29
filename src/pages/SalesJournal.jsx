@@ -31,8 +31,6 @@ const SalesJournal = () => {
   const currentStock = selectedProduct ? selectedProduct.inventory - totalSold : 0;
   const estimatedTotal = selectedProduct ? selectedProduct.price * formData.qty : 0;
 
-  // --- NEW: Real-time Check ---
-  // Is the user asking for more than we have?
   const isOverStock = selectedProduct && parseInt(formData.qty) > currentStock;
 
   useEffect(() => {
@@ -48,7 +46,7 @@ const SalesJournal = () => {
     e.preventDefault();
     if (!selectedProduct) return alert("Please select a product");
 
-    if (isOverStock) return; // Stop if invalid
+    if (isOverStock) return; 
 
     const newSale = {
       id: Date.now(),
@@ -126,7 +124,6 @@ const SalesJournal = () => {
                   type="number" 
                   name="qty" 
                   min="1" 
-                  // Removed 'max' attribute to stop native tooltip from appearing
                   value={formData.qty} 
                   onChange={handleInputChange} 
                   className={`w-full p-2.5 border rounded-lg outline-none focus:ring-2 transition
@@ -147,7 +144,6 @@ const SalesJournal = () => {
               </div>
             </div>
 
-            {/* --- NEW: VISIBLE ERROR MESSAGE --- */}
             {isOverStock && (
               <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded-lg border border-red-100 animate-pulse">
                 <AlertTriangle className="w-4 h-4" />
@@ -169,7 +165,6 @@ const SalesJournal = () => {
 
             <button 
               type="submit" 
-              // Disable if No Product OR Over Stock OR Out of Stock
               disabled={!selectedProduct || isOverStock || currentStock <= 0}
               className={`w-full py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 shadow-lg 
                 ${(!selectedProduct || isOverStock || currentStock <= 0) 
@@ -177,7 +172,6 @@ const SalesJournal = () => {
                   : 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-indigo-200'}`}
             >
               <Save className="w-5 h-5" /> 
-              {/* Button Text Logic */}
               {isOverStock ? 'Quantity Exceeds Stock' : 
                (selectedProduct && currentStock <= 0) ? 'Out of Stock' : 'Save Record'}
             </button>
