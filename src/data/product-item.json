@@ -1,0 +1,10 @@
+[
+  { "id": 101, "name": "Espresso Shot", "price": 60, "category": "Coffee" },
+  { "id": 102, "name": "Iced Americano", "price": 80, "category": "Coffee" },
+  { "id": 103, "name": "Caramel Macchiato", "price": 120, "category": "Coffee" },
+  { "id": 104, "name": "Green Tea Latte", "price": 90, "category": "Tea" },
+  { "id": 105, "name": "Thai Tea", "price": 70, "category": "Tea" },
+  { "id": 106, "name": "Blueberry Cheesecake", "price": 150, "category": "Bakery" },
+  { "id": 107, "name": "Croissant", "price": 85, "category": "Bakery" },
+  { "id": 108, "name": "Chocolate Mousse", "price": 110, "category": "Bakery" }
+]
