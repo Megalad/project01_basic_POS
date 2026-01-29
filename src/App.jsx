@@ -23,7 +23,7 @@ const Navbar = () => {
             <Store className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-violet-700 tracking-tight">
-            SalesTrack
+            Badds Station
           </span>
         </div>
 
