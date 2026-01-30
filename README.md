@@ -1,7 +1,7 @@
 # Project 01: Basic POS (Point of Sale)
 
 ## Team Members
-* Pyae Zin Phyo
+* Name:Pyae Zin Phyo ID:6715150
 
 ## Live Demo
 [Click here to visit the live website](https://megalad.github.io/POS/)
